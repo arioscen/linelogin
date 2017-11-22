@@ -22,6 +22,7 @@ def profile():
     headers = {
         "Content-Type": "application/x-www-form-urlencoded"
     }
+    print(request.args.get('code'))
     data = {
         "grant_type": "authorization_code",
         "code": request.args.get('code'),
@@ -30,6 +31,7 @@ def profile():
         "client_secret": "b4d671b90cb6b791c12f2fc3380edb8e"
     }
     response = session.post(authorize_url, headers=headers, data=data)
+    print(response.text)
     access_token = json.loads(response.text)['access_token']
 
     profile_url = "https://api.line.me/v2/profile"
