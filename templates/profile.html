@@ -25,7 +25,9 @@
     <title>LINE Web Login Success</title>
     <script>
         var pictureUrl = "{{pictureUrl}}";
-        var displayName = "{{displayName}}"
+        var displayName = "{{displayName}}";
+        document.getElementById("picture").src=pictureUrl;
+        document.getElementById("name").src=displayName;
     </script>
   </head>
   <body>
@@ -35,9 +37,9 @@
           <div class="area">
             <div class="center-block profile-margin">
               {% if pictureUrl %}
-                <img th:src="${pictureUrl}" class="profile-img img-circle" />
+                <img th:src="" class="profile-img img-circle" id="picture"/>
               {% endif %}
-              <h3 th:text="${displayName}"></h3>
+              <h3 th:text="" id="name"></h3>
               {% if statusMessage %}
                 <h2>{{statusMessage}}</h2>
               {% endif %}
