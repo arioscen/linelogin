@@ -31,9 +31,9 @@
           <div class="area">
             <div class="center-block profile-margin">
               {% if pictureUrl %}
-                <img th:src="${pictureUrl}" class="profile-img img-circle" />
+                <img src="{{pictureUrl}}" class="profile-img img-circle" />
               {% endif %}
-              <h3 th:text="${displayName}"></h3>
+              <h3 th:text="{{displayName}}"></h3>
               {% if statusMessage %}
                 <h2>{{statusMessage}}</h2>
               {% endif %}
