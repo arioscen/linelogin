@@ -23,6 +23,10 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src='{{ url_for("static", filename="js/success.js") }}'></script>
     <title>LINE Web Login Success</title>
+    <script>
+        var pictureUrl = "{{pictureUrl}}";
+        var displayName = "{{displayName}}"
+    </script>
   </head>
   <body>
     <div class="container">
@@ -31,9 +35,9 @@
           <div class="area">
             <div class="center-block profile-margin">
               {% if pictureUrl %}
-                <img src="{{pictureUrl}}" class="profile-img img-circle" />
+                <img th:src="${pictureUrl}" class="profile-img img-circle" />
               {% endif %}
-              <h3 th:text="{{string(displayName)}}"></h3>
+              <h3 th:text="${displayName}"></h3>
               {% if statusMessage %}
                 <h2>{{statusMessage}}</h2>
               {% endif %}
