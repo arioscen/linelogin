@@ -26,7 +26,7 @@ def profile():
     data = {
         "grant_type": "authorization_code",
         "code": request.args.get('code'),
-        "redirect_uri": "http://localhost:5000/Index.html",
+        "redirect_uri": "https://arioscen-linelogin-flask.herokuapp.com/profile",
         "client_id": "1547929126",
         "client_secret": "b4d671b90cb6b791c12f2fc3380edb8e"
     }
