@@ -31,13 +31,13 @@
           <div class="area">
             <div class="center-block profile-margin">
               {% if pictureUrl %}
-                <img th:src="{{pictureUrl}}" class="profile-img img-circle" />
+                <img th:src={{pictureUrl}} class="profile-img img-circle" />
               {% endif %}
-              <h3 th:text="{{displayName}}"></h3>
+              <h3 th:text={{displayName}}></h3>
               {% if statusMessage %}
-                <h2>{{statusMessage}}</h2>
+                <h1>{{statusMessage}}</h1>
               {% endif %}
-              <h2>{{userId}}</h2>
+              <h1>{{userId}}</h1>
             </div>
           </div>
         </div>
