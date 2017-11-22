@@ -23,12 +23,6 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src='{{ url_for("static", filename="js/success.js") }}'></script>
     <title>LINE Web Login Success</title>
-    <script>
-        var pictureUrl = "{{pictureUrl}}";
-        var displayName = "{{displayName}}";
-        document.getElementById("picture").src=pictureUrl;
-        document.getElementById("name").src=displayName;
-    </script>
   </head>
   <body>
     <div class="container">
@@ -37,13 +31,13 @@
           <div class="area">
             <div class="center-block profile-margin">
               {% if pictureUrl %}
-                <img th:src="" class="profile-img img-circle" id="picture"/>
+                <img src="{{pictureUrl}}" class="profile-img img-circle" />
               {% endif %}
-              <h3 th:text="" id="name"></h3>
+              <h1>{{displayName}}"</h1>
               {% if statusMessage %}
-                <h2>{{statusMessage}}</h2>
+                <div>{{statusMessage}}</div>
               {% endif %}
-              <h2>{{userId}}</h2>
+              <div>{{userId}}</div>
             </div>
           </div>
         </div>
