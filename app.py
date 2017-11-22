@@ -5,14 +5,24 @@ import json
 app = Flask(__name__)
 
 
+@app.route('/')
+def main():
+    return redirect(url_for('login'))
+
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+
+@app.route('/success')
+def success():
+    return render_template('success.html')
+
+
 @app.route('/Index.html')
 def index():
     return render_template('Index.html')
-
-
-@app.route('/')
-def main():
-    return redirect(url_for('index'))
 
 
 @app.route('/profile')
@@ -60,4 +70,4 @@ def profile():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run()

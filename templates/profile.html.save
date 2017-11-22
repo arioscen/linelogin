@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <style type="text/css">
+    table {
+        border: 1px solid ; border-collapse: collapse;
+    }
+    tr, td {
+        border: 1px solid ;
+    }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>userId</td>
+        <td>{{userId}}</td>
+    </tr>
+    <tr>
+        <td>displayName</td>
+        <td>{{displayName}}</td>
+    </tr>
+    {% if statusMessage %}
+        <tr>
+            <td>statusMessage</td>
+            <td>{{statusMessage}}</td>
+        </tr>
+    {% endif %}
+    {% if pictureUrl %}
+        <tr>
+            <td>pictureUrl</td>
+            <td>{{pictureUrl}}</td>
+        </tr>
+    {% endif %}
+</table>
+</body>
+</html>

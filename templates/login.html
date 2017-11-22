@@ -14,30 +14,33 @@
   ~ License for the specific language governing permissions and limitations
   ~ under the License.
   -->
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
   <head>
     <meta http-equiv='Content-type' content='text/html; charset=utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
     <link rel="stylesheet" href='{{ url_for("static", filename="css/line-login.css") }}' />
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src='{{ url_for("static", filename="js/success.js") }}'></script>
-    <title>LINE Web Login Success</title>
+    <title>LINE Web Login</title>
+    <script>
+        function Auth() {
+            var URL = 'https://access.line.me/oauth2/v2.1/authorize?';
+            URL += 'response_type=code';
+            URL += '&client_id=1547929126';
+            URL += '&redirect_uri=https://arioscen-linelogin-flask.herokuapp.com/profile';
+            URL += '&state=abcde';
+            URL += '&scope=openid%20profile';
+            window.location.href = URL;
+        }
+    </script>
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
           <div class="area">
-            <div class="center-block profile-margin">
-              {% if pictureUrl %}
-                <img th:src="{{pictureUrl}}" class="profile-img img-circle" />
-              {% endif %}
-              <h3 th:text="{{displayName}}"></h3>
-              {% if statusMessage %}
-                <h2>{{statusMessage}}</h2>
-              {% endif %}
-              <h2>{{userId}}</h2>
+            <h4 class="text-center area-margin">LINE Web Login</h4>
+            <div id="web-login-button" class="center-block area-margin">
+              <a class="center-block" href="javascript:void Auth();"></a>
             </div>
           </div>
         </div>
