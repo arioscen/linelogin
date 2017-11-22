@@ -38,12 +38,24 @@ def profile():
     profile_url = "https://api.line.me/v2/profile"
     profile_text = requests.get(profile_url, headers={"Authorization": "Bearer %s" % access_token}).text
     profile_json = json.loads(profile_text)
+
+    userId = profile_json['userId']
+    displayName = profile_json['displayName']
+    try:
+        statusMessage = profile_json['statusMessage']
+    except KeyError:
+        statusMessage = None
+    try:
+        pictureUrl = profile_json['pictureUrl']
+    except KeyError:
+        pictureUrl = None
+
     return render_template(
         'profile.html',
-        userId=profile_json['userId'],
-        displayName=profile_json['displayName'],
-        statusMessage=profile_json['statusMessage'],
-        pictureUrl=profile_json['pictureUrl']
+        userId=userId,
+        displayName=displayName,
+        statusMessage=statusMessage,
+        pictureUrl=pictureUrl
     )
 
 

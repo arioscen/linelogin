@@ -22,14 +22,18 @@
         <td>displayName</td>
         <td>{{displayName}}</td>
     </tr>
-    <tr>
-        <td>statusMessage</td>
-        <td>{{statusMessage}}</td>
-    </tr>
-    <tr>
-        <td>pictureUrl</td>
-        <td>{{pictureUrl}}</td>
-    </tr>
+    {% if statusMessage %}
+        <tr>
+            <td>statusMessage</td>
+            <td>{{statusMessage}}</td>
+        </tr>
+    {% end if %}
+    {% if pictureUrl %}
+        <tr>
+            <td>pictureUrl</td>
+            <td>{{pictureUrl}}</td>
+        </tr>
+    {% end if %}
 </table>
 </body>
 </html>
