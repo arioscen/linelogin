@@ -20,11 +20,6 @@ def success():
     return render_template('success.html')
 
 
-@app.route('/Index.html')
-def index():
-    return render_template('Index.html')
-
-
 @app.route('/profile')
 def profile():
     authorize_url = "https://api.line.me/oauth2/v2.1/token"
@@ -43,7 +38,7 @@ def profile():
     try:
         access_token = json.loads(response.text)['access_token']
     except KeyError:
-        return redirect(url_for('index'))
+        return redirect(url_for('login'))
 
     profile_url = "https://api.line.me/v2/profile"
     profile_text = requests.get(profile_url, headers={"Authorization": "Bearer %s" % access_token}).text
