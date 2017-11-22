@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script>
+        function Auth() {
+            var URL = 'https://access.line.me/oauth2/v2.1/authorize?';
+            URL += 'response_type=code';
+            URL += '&client_id=1547929126';
+            URL += '&redirect_uri=https://hoa-line.herokuapp.com/profile';
+            URL += '&state=abcde';
+            URL += '&scope=openid%20profile';
+            window.location.href = URL;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="Auth();">點選這裡連結到Line Login</button>
+</body>
+</html>

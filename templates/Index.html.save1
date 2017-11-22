@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script>
+        function Auth() {
+            var URL = 'https://access.line.me/dialog/oauth/weblogin?';
+            URL += 'response_type=code';
+            URL += '&client_id=1547929126';
+            URL += '&redirect_uri=http://localhost:5000/Index.html';
+            URL += '&state=abcde';
+            window.location.href = URL;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="Auth();">點選這裡連結到Line Login</button>
+</body>
+</html>
