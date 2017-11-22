@@ -14,11 +14,10 @@ def main():
     return redirect(url_for('index'))
 
 
-@app.route('/profile')
+@app.route('/profile/')
 def profile():
-
     return render_template('profile.html')
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
