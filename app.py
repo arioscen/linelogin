@@ -14,7 +14,7 @@ def main():
     return redirect(url_for('index'))
 
 
-@app.route('/profile/')
+@app.route('/profile')
 def profile():
     return render_template('profile.html')
 
