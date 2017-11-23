@@ -30,9 +30,9 @@ def profile():
     data = {
         "grant_type": "authorization_code",
         "code": request.args.get('code'),
-        "redirect_uri": "https://arioscen-linelogin-flask.herokuapp.com/profile",
-        "client_id": "1547929126",
-        "client_secret": "b4d671b90cb6b791c12f2fc3380edb8e"
+        "redirect_uri": "<redirect_uri>",
+        "client_id": "<client_id>",
+        "client_secret": "<client_secret>"
     }
     response = session.post(authorize_url, headers=headers, data=data)
     try:
